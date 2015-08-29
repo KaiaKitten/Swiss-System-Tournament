@@ -71,4 +71,4 @@ CREATE VIEW b AS
 CREATE VIEW pairings AS
     SELECT DISTINCT a.id as id1, a.name as name1, b.id as id2, b.name as name2
     FROM matches, a LEFT JOIN b ON (a.rn+1) = b.rn
-    WHERE (a.id, b.id2) NOT IN (SELECT winner, loser FROM matches)
+    WHERE (a.id, b.id) NOT IN (SELECT winner, loser FROM matches)
